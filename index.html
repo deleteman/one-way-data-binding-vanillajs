@@ -7,27 +7,14 @@
     <body >
 
         <p>
-            <h1>One way data binding example</h1>
-        </p>
-        <p>
-<!--
-            Let's update this counter: <span id="counter"></span>
-        </p>
-        <p>
-            <button onclick="updateCounter(1)">Up!</button>
-            <button onclick="updateCounter(-1)">Down!</button>-->
-            <counter-component current-counter=0  data-text="Component-based Counter: $$"></counter-component>
+            <div id="container" />
         </p>
 
-        <script type="text/javascript">
-            createdBindedVariable("counter")
-            counter = 0
+       <script  type="module">
+            import {App} from './index.js'
+            import {render} from './template-binder.js'
 
-
-            function updateCounter(val) {
-                counter += val
-            }
-
+            render(App(), "container")
         </script>
     </body>
 </html>
